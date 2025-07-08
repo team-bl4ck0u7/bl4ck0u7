@@ -1,0 +1,286 @@
+
+html {
+	box-sizing: border-box;
+}
+
+html, body {
+	background: #222;
+	height: 100%;
+	/* overflow: hidden; */
+	margin: 0;
+	padding: 0;
+}
+
+body, input, select, textarea {
+	color: rgba(255, 255, 255, 0.75);
+	font-family: monospace, "Khula", sans-serif;
+	font-size: 15pt;
+	font-weight: 100;
+	line-height: 1.75em;
+}
+
+a {
+	-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	text-decoration: none;
+}
+
+	a:hover {
+		color: #99999c !important;
+		border-bottom-color: transparent;
+	}
+
+strong, b {
+	color: #ffffff;
+	font-weight: 300;
+}
+
+em, i {
+	font-style: italic;
+}
+
+p {
+	margin: 0 0 2em 0;
+	/* text-shadow: 0.1vw 0.1vw #000 */
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: #ffffff;
+	font-weight: 300;
+	line-height: 1em;
+	margin: 0 0 1em 0;
+	text-shadow: 0.1vw 0.1vw #000
+}
+
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+	color: inherit;
+	border: 0;
+}
+
+h2 {
+	font-size: 2em;
+	line-height: 1.5em;
+	letter-spacing: -0.025em;
+}
+
+h3 {
+	font-size: 1.35em;
+	line-height: 1.5em;
+}
+
+h4 {
+	font-size: 1.1em;
+	line-height: 1.5em;
+}
+
+h5 {
+	font-size: 0.9em;
+	line-height: 1.5em;
+}
+
+h6 {
+	font-size: 0.7em;
+	line-height: 1.5em;
+}
+
+
+
+/* Header */
+
+#page-wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100vh;
+}
+
+#header {
+	background: #222;
+	box-shadow: 0 0 0.25em 0 rgba(0, 0, 0, 0.25);
+	cursor: default;
+	height: 3.5em;
+	line-height: 3.5em;
+	position: relative;
+	width: 100%;
+	z-index: 100;
+}
+
+	#header h1 {
+		font-size: 1em;
+		height: inherit;
+		left: 1.25em;
+		line-height: inherit;
+		margin: 0;
+		position: absolute;
+		top: 0;
+	}
+
+	#header nav {
+		position: absolute;
+		font-size: 0.9em;
+		right: 1em;
+		top: 0;
+	}
+
+		#header nav ul {
+			margin: 0;
+		}
+
+			#header nav ul li {
+				display: inline-block;
+				margin-left: 1em;
+			}
+
+				#header nav ul li a, #header nav ul li span {
+					border: 0;
+					color: inherit;
+					display: inline-block;
+					height: inherit;
+					line-height: inherit;
+					outline: 0;
+				}
+
+body.landing #page-wrapper {
+	padding-top: 0;
+}
+
+body.landing #header {
+	background: transparent;
+	box-shadow: none;
+	position: absolute;
+}
+
+/* Banner */
+
+#banner {
+	flex: 1;
+    margin-top: 0; /* Ensure no overlap with the header */
+    padding: 2rem; /* Add padding for content inside the banner */
+    background-color: #222; /* Background color for the banner */
+    color: #fff; /* Text color */
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-position: center center;
+    background-size: cover;
+}
+
+/* Style for the container */
+#member {
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* Center the content horizontally */
+	justify-content: center; /* Center the content vertically */
+	min-height: 100vh; /* Full viewport height */
+	background-color: #222; /* Background color for the member section */
+	padding: 2rem; /* Add padding around the content */
+}
+
+#member h2 {
+	font-size: 1.5em; /* Heading size */
+	color: #fff; /* Text color */
+	margin-bottom: 1.5rem; /* Spacing below the heading */
+	text-align: center; /* Center the heading text */
+	margin-bottom: 0;
+}
+
+#member .container{
+	flex: 1;
+    display: flex;
+	flex-wrap: wrap;
+    justify-content: center; /* Center the boxes horizontally */
+    gap: 1.5rem; /* Add spacing between the boxes */
+	padding: 2rem;
+}
+
+/* Style for each box */
+#member .container .box {
+    background: #333; /* Box background color */
+    color: #fff; /* Text color */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+    padding: 1.5rem;
+    text-align: center;
+    flex: 1 1 calc(70% - 1.5rem); /* Responsive width: 3 boxes per row */
+    max-width: calc(20% - 1.5rem); /* Ensure max width for larger screens */
+    min-width: 250px; /* Minimum width for smaller screens */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for each box */
+#member .container .box:hover {
+    transform: translateY(-5px); /* Slight lift on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Enhanced shadow on hover */
+}
+
+#member .container .box img {
+	width: 120px; /* Fixed size for member images */
+	height: 120px; /* Fixed size for member images */
+	border-radius: 50%; /* Circular images */
+	margin: 1rem;
+}
+
+#member .container .box .tags {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center; /* Center the tags */
+	gap: 0.5rem; /* Spacing between tags */
+	width: 100%; /* Full width for the tags container */
+	padding-bottom: 1rem;
+}
+
+#member .container .box .tags i {
+	font-size: 1.2rem; /* Icon size */
+	color: #fff; /* Icon color */
+	margin-right: 0.5rem; /* Spacing between icon and text */
+}
+
+#member .container .box .tags span {
+	display: flex;
+	background-color: #444; /* Background color for tags */
+	color: #fff; /* Text color for tags */
+	padding: 0.25rem 0.5rem; /* Padding for tags */
+	border-radius: 4px; /* Rounded corners for tags */
+	font-size: 0.8rem; /* Font size for tags */
+    min-width: 20px; /* Minimum width for smaller screens */
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for depth */
+}
+
+
+/* Style for headings inside the boxes */
+#member .container .box h3 {
+    font-size: 1.25rem;
+    margin-bottom: 0.5rem;
+    color: #fff;
+}
+
+/* Style for paragraphs inside the boxes */
+#member .container .box p {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.75);
+}
+
+
+/* Footer */
+
+#footer {
+	font-size: 0.7em;
+	height: 3.5em;
+	flex-shrink: 0;
+	background: #222;
+	box-shadow: 0 -0.125em 0.25em 0 rgba(0, 0, 0, 0.25);
+	text-align: center;
+	align-content: center;
+}
+
+#footer a {
+	-moz-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-webkit-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	-ms-transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	transition: border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+	text-decoration: none;
+	color: inherit;
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="icon" href="images/bl4ck0u7.png" type="image/x-icon">
+    <title>407</title>
+
+    <!-- CSS -->
+    <style>
+        body {
+        background-color: #222;
+        color: #fff;
+        font-weight: 400;
+        font-size: 1vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        text-transform: uppercase;
+        font-family: monospace, "Khula", sans-serif;
+        height: 100vh;
+        box-sizing: border-box;
+        letter-spacing: 6px;
+        margin: 0;
+        line-height: 1.2;
+        text-shadow: 1vw 1vw #000;
+      }
+
+      span {
+        display: inline-block;
+      }
+    </style>
+    
+    <!-- Anime.js -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"> </script>
+    
+    <!-- Letterize animations -->
+    <script type="module">
+      import Letterize from "https://cdn.skypack.dev/letterizejs";
+      const test = new Letterize({
+      targets: ".animate-me"
+      });
+
+      const animation = anime.timeline({
+        targets: test.listAll,
+        delay: anime.stagger(100, {
+          grid: [test.list[0].length, test.list.length],
+          from: "center"
+        }),
+        loop: false,  // Stop looping after one play
+        complete: () => {
+                // Redirect to about.html after animation completes
+                document.body.style.transition = "opacity 1.5s";
+                document.body.style.opacity = 0;
+                setTimeout(() => {
+                    window.location.href = "about.html";
+                }, 1000); // Wait for fade-out to complete
+            }
+      });
+
+      animation
+        .add({
+          duration: 1000,
+        })
+        .add({
+          letterSpacing: "20px",
+          scale: 0.2,
+        })
+        .add({
+          letterSpacing: "6px",
+        })
+        .add({
+        translateY: -40
+        })
+        .add({
+          translateY: 0
+        })
+        .add({
+          scale: 1
+        });
+    </script>
+</head>
+    
+<body>
+    <div>
+      <div class="animate-me">
+        B L 4 C K 0 U 7
+      </div>
+    </div>
+</body>
+</html>
